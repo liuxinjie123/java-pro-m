@@ -2,14 +2,10 @@ package com.mira.common.vo;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 import java.util.List;
 
-@Data
-//@NoArgsConstructor
 //@JsonIgnoreProperties(ignoreUnknown = true)
 //@JsonInclude
 public class Result<T> implements Serializable {
@@ -18,6 +14,8 @@ public class Result<T> implements Serializable {
     private String msg;
     private Page meta;
     private T data;
+
+    public Result() {}
 
     public Result(String code, String msg) {
         this.code = code;
