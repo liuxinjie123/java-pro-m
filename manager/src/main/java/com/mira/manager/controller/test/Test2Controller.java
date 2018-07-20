@@ -1,19 +1,17 @@
-package com.mira.wechat.controller.test;
+package com.mira.manager.controller.test;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiOperation;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("/test")
+@RequestMapping("/test2")
+@CrossOrigin(origins = "/*", maxAge = 3600)
 @Api(tags = {"api-test"}, description = "测试接口")
 @RestController
-public class TestController {
+public class Test2Controller {
 
-    @ApiOperation(value = "TEST-value", notes = "TEST-notes")
+    @ApiOperation(value = "TEST2-value", notes = "TEST2-notes")
     @ApiImplicitParam(name = "id", value = "ID", required = true, dataType = "string", paramType = "path")
     @GetMapping(value = "/{id}")
     public String getUserById(@PathVariable(value = "id") String id) {

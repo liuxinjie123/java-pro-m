@@ -1,21 +1,20 @@
-package com.mira.manager.config;
+package com.mira.wechat.config;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mira.common.ext.jackson.Java8TimeModule;
-import com.mira.manager.config.intereceptors.GlobalConfigInterceptor;
-import com.mira.manager.config.intereceptors.LoginInterceptor;
+import com.mira.wechat.config.intereceptors.LoginInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CommonsRequestLoggingFilter;
-import org.springframework.web.filter.CorsFilter;
-import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.annotation.PostConstruct;
 import javax.validation.Validator;
@@ -28,8 +27,6 @@ public class MvcConfig implements WebMvcConfigurer {
     private ObjectMapper objectMapper;
     @Autowired
     private LoginInterceptor loginInterceptor;
-    @Autowired
-    private GlobalConfigInterceptor globalConfigInterceptor;
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
@@ -42,10 +39,12 @@ public class MvcConfig implements WebMvcConfigurer {
 //        registry.addResourceHandler("/static/site/**").addResourceLocations("file:./frontend-site/src/");
     }
 
+
+
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(loginInterceptor).addPathPatterns("/api/mg/**").excludePathPatterns("/mg/login");
-        registry.addInterceptor(globalConfigInterceptor).addPathPatterns("/*");
+        registry.addInterceptor(loginInterceptor).addPathPatterns("/api/wc/**").excludePathPatterns("/wc/login");
     }
 
 
@@ -76,22 +75,5 @@ public class MvcConfig implements WebMvcConfigurer {
         filter.setIncludeHeaders(true);
         filter.setMaxPayloadLength(5120);
         return filter;
-    }
-
-    private CorsConfiguration buildConfig() {
-        CorsConfiguration corsConfiguration = new CorsConfiguration();
-        corsConfiguration.addAllowedOrigin("*"); // 1 设置访问源地址
-        corsConfiguration.addAllowedHeader("*"); // 2 设置访问源请求头
-        corsConfiguration.addAllowedMethod("*"); // 3 设置访问源请求方法
-//        corsConfiguration.addAllowedOrigin("http://www.aimaonline.cn/");
-//        corsConfiguration.addAllowedOrigin("http://test.aimaonline.cn/");
-        return corsConfiguration;
-    }
-
-    @Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/**", buildConfig()); // 4 对接口配置跨域设置
-        return new CorsFilter(source);
     }
 }

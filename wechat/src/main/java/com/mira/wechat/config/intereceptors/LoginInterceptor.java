@@ -1,7 +1,7 @@
-package com.mira.manager.ext.intereceptors;
+package com.mira.wechat.config.intereceptors;
 
 import com.mira.common.exception.UnauthorizedException;
-import com.mira.manager.config.Session;
+import com.mira.wechat.config.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;

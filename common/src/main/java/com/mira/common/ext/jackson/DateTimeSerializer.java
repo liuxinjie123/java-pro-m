@@ -1,4 +1,4 @@
-package com.mira.manager.ext.jackson;
+package com.mira.common.ext.jackson;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
