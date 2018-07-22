@@ -3,10 +3,6 @@ package com.mira.common.exception;
 
 import org.springframework.util.StringUtils;
 
-/**
- * Created by hongpf on 15/4/15.
- */
-
 public class BusinessException extends RuntimeException {
     private String message;
     private String url;

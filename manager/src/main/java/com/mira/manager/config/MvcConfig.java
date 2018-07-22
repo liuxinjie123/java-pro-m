@@ -2,9 +2,9 @@ package com.mira.manager.config;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mira.common.ext.jackson.Java8TimeModule;
 import com.mira.manager.config.intereceptors.GlobalConfigInterceptor;
 import com.mira.manager.config.intereceptors.LoginInterceptor;
+import com.mira.common.ext.jackson.Java8TimeModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

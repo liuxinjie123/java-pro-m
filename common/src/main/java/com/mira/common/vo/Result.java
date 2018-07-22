@@ -2,12 +2,14 @@ package com.mira.common.vo;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.Data;
 
 import java.io.Serializable;
 import java.util.List;
 
 //@JsonIgnoreProperties(ignoreUnknown = true)
 //@JsonInclude
+@Data
 public class Result<T> implements Serializable {
     private static final ObjectMapper MAPPER = new ObjectMapper();	// 定义jackson对象
     private String code;

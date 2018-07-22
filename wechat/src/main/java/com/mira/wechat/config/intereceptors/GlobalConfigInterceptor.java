@@ -1,4 +1,4 @@
-package com.mira.manager.config.intereceptors;
+package com.mira.wechat.config.intereceptors;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.method.HandlerMethod;
