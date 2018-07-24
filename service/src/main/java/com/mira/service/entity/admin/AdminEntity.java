@@ -1,4 +1,4 @@
-package com.mira.service.entity.user;
+package com.mira.service.entity.admin;
 
 import com.mira.service.entity.BaseEntity;
 import lombok.Data;
@@ -11,10 +11,10 @@ import javax.persistence.Transient;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "m_u_users")
+@Table(name = "m_admins")
 @Data
 @NoArgsConstructor
-public class ManagerEntity extends BaseEntity implements Serializable {
+public class AdminEntity extends BaseEntity implements Serializable {
     @Column(name = "username")
     private String username;				// 登录的账号
 

@@ -1,4 +1,4 @@
-CREATE TABLE `m_u_users` (
+CREATE TABLE `m_admins` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `username` VARCHAR(60) NOT NULL COMMENT '账号',
   `password` VARCHAR(100) NOT NULL COMMENT '密码',
@@ -16,10 +16,10 @@ CREATE TABLE `m_u_users` (
   `last_update_time` TIMESTAMP COMMENT '最后一次更新时间',
   `version` INT(5) DEFAULT NULL COMMENT 'version',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='manager用户表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='manager端-管理员表';
 
 
-CREATE TABLE `m_u_users_login_log` (
+CREATE TABLE `m_admins_login_log` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `user_id` BIGINT(20) NOT NULL COMMENT '用户id',
   `username` varchar(30) NOT NULL COMMENT '用户登录名',
@@ -30,10 +30,10 @@ CREATE TABLE `m_u_users_login_log` (
   `version` INT(5) DEFAULT NULL COMMENT 'version',
   PRIMARY KEY (`id`),
   INDEX  idx_user_id (`user_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='manager用户登陆日志表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='manager端-管理员登陆日志表';
 
 
-CREATE TABLE `m_u_user_role` (
+CREATE TABLE `m_admins_role` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
   `number` int(10) NOT NULL COMMENT '编号',
   `role` varchar(50) NOT NULL COMMENT '角色',
@@ -43,7 +43,7 @@ CREATE TABLE `m_u_user_role` (
   `last_update_time` TIMESTAMP COMMENT '最后一次更新时间',
   `version` INT(5) DEFAULT NULL COMMENT 'version',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='manager用户角色表';
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='manager端-管理员角色表';
 
 
 CREATE TABLE `t_generate_number` (

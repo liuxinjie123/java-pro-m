@@ -1,6 +1,6 @@
 package com.mira.service.utils;
 
-import com.mira.service.entity.user.ManagerEntity;
+import com.mira.service.entity.admin.AdminEntity;
 import org.springframework.util.DigestUtils;
 
 import java.text.SimpleDateFormat;
@@ -17,7 +17,7 @@ public class SecureUtil {
 	/**
 	 * 加盐加密的策略非常多,根据实际业务来
 	 */
-	public static void entryptPassword(ManagerEntity user) {
+	public static void entryptPassword(AdminEntity user) {
 		String salt = UUID.randomUUID().toString();
 		String temPassword = salt + user.getPlainPassword();
 		String md5Password = DigestUtils.md5DigestAsHex(temPassword.getBytes());
@@ -25,7 +25,7 @@ public class SecureUtil {
 		user.setPassword(md5Password);
 	}
 	
-	public static boolean decryptPassword(ManagerEntity user, String plainPassword) {
+	public static boolean decryptPassword(AdminEntity user, String plainPassword) {
 		if (user == null) return false;
 		String temPassword = user.getSalt() + plainPassword;
 		String md5Password = DigestUtils.md5DigestAsHex(temPassword.getBytes());
