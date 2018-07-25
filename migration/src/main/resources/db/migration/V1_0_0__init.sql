@@ -42,7 +42,8 @@ CREATE TABLE `m_admins_role` (
   `last_update_id` BIGINT(20) NOT NULL COMMENT '最后一次更新人userId',
   `last_update_time` TIMESTAMP COMMENT '最后一次更新时间',
   `version` INT(5) DEFAULT NULL COMMENT 'version',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY (`number`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='manager端-管理员角色表';
 
 

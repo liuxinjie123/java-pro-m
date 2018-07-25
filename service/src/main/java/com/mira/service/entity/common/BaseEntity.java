@@ -24,30 +24,33 @@ public class BaseEntity implements Serializable {
     private int version;
 
     @Column(name = "create_id")
-    private String createId;                                //创建人id
+    private int createId;                                   //创建人id
 
     @Column(name = "create_time")
-    private LocalDateTime createTime;                                //创建时间
+    private LocalDateTime createTime;                       //创建时间
 
     @Column(name = "last_update_id")
-    private String lastUpdateId;                            //最后一次更新人id
+    private int lastUpdateId;                               //最后一次更新人id
 
     @Column(name = "last_update_time")
-    private LocalDateTime lastUpdateTime;                            //最后一次更新时间
+    private LocalDateTime lastUpdateTime;                   //最后一次更新时间
+
+    @Transient
+    private int sessionId;
 
     @PrePersist
     public void init() {
         System.out.println(" ------ jpa init method ------ ");
-        if (StringUtils.isBlank(createId)) {
-            this.setCreateId("0");
-        }
+        createId = sessionId;
         createTime = LocalDateTime.now();
-        lastUpdateId = createId;
+        lastUpdateId = sessionId;
         lastUpdateTime = LocalDateTime.now();
     }
 
     @PreUpdate
     public void update() {
         System.out.println(" ------ jpa update method ------ ");
+        lastUpdateId = sessionId;
+        lastUpdateTime = LocalDateTime.now();
     }
 }
