@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.mira.common.ext.jackson.Java8TimeModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -18,6 +19,7 @@ import java.nio.charset.Charset;
 import java.util.List;
 
 @Configuration
+@ComponentScan("com.mira.service")
 public class MvcConfig implements WebMvcConfigurer {
     @Autowired
     private ObjectMapper objectMapper;

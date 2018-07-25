@@ -21,7 +21,7 @@ CREATE TABLE `m_admins` (
 
 CREATE TABLE `m_admins_login_log` (
   `id` BIGINT(20) NOT NULL AUTO_INCREMENT,
-  `user_id` BIGINT(20) NOT NULL COMMENT '用户id',
+  `admin_id` BIGINT(20) NOT NULL COMMENT 'admin id',
   `username` varchar(30) NOT NULL COMMENT '用户登录名',
   `create_id` BIGINT(20) NOT NULL COMMENT '创建人userId',
   `create_time` datetime NOT NULL COMMENT '创建时间',
@@ -29,7 +29,7 @@ CREATE TABLE `m_admins_login_log` (
   `last_update_time` TIMESTAMP COMMENT '最后一次更新时间',
   `version` INT(5) DEFAULT NULL COMMENT 'version',
   PRIMARY KEY (`id`),
-  INDEX  idx_user_id (`user_id`)
+  INDEX  idx_user_id (`admin_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='manager端-管理员登陆日志表';
 
 

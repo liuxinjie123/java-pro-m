@@ -1,10 +1,10 @@
-package com.mira.service.repository.user;
+package com.mira.service.repository.admin;
 
 
 import com.mira.service.entity.admin.AdminEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<AdminEntity, Long> {
+public interface AdminRepository extends JpaRepository<AdminEntity, Long> {
 
     AdminEntity findByUsername(String username);
 }
