@@ -22,7 +22,7 @@ import javax.validation.Validator;
 import java.nio.charset.Charset;
 import java.util.List;
 
-@Configuration
+@Configuration("managerMvcConfig")
 public class MvcConfig implements WebMvcConfigurer {
     @Autowired
     private ObjectMapper objectMapper;

@@ -1,4 +1,4 @@
-package com.mira.service.utils;
+package com.mira.common.utils;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Service;

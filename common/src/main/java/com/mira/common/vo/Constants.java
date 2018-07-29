@@ -34,4 +34,16 @@ public class Constants {
     public static final String SECOND_KILL_PRODUCT01_QUEUE_NAME = "second-kill-product1-queue-name";
 
     public static final String FILE_SIZE_OVER_LIMIT_30 = "文件大小不能超过30M";
+
+    public static class ADMIN_ROLE {
+        public int num;
+        public String name;
+        ADMIN_ROLE(int num, String name) {
+            this.num = num;
+            this.name = name;
+        }
+        public static ADMIN_ROLE SUPER_ADMIN  = new ADMIN_ROLE(0, "超级管理员");
+
+    }
+
 }

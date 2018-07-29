@@ -1,6 +1,6 @@
 package com.mira.service.utils;
 
-import com.mira.service.entity.admin.AdminEntity;
+import com.mira.service.entity.admin.AdminDO;
 import org.springframework.util.DigestUtils;
 
 import java.text.SimpleDateFormat;
@@ -13,11 +13,14 @@ import java.util.UUID;
  */
 public class SecureUtil {
 
+	public static String securePassword(String password) {
+		return org.apache.commons.codec.digest.DigestUtils.md5Hex("$&*" + org.apache.commons.codec.digest.DigestUtils.md5Hex("@." + password + "$*************") + "!@#%……&");
+	}
 
 	/**
 	 * 加盐加密的策略非常多,根据实际业务来
 	 */
-	public static void entryptPassword(AdminEntity user) {
+	public static void entryptPassword(AdminDO user) {
 		String salt = UUID.randomUUID().toString();
 		String temPassword = salt + user.getPlainPassword();
 		String md5Password = DigestUtils.md5DigestAsHex(temPassword.getBytes());
@@ -25,7 +28,7 @@ public class SecureUtil {
 		user.setPassword(md5Password);
 	}
 	
-	public static boolean decryptPassword(AdminEntity user, String plainPassword) {
+	public static boolean decryptPassword(AdminDO user, String plainPassword) {
 		if (user == null) return false;
 		String temPassword = user.getSalt() + plainPassword;
 		String md5Password = DigestUtils.md5DigestAsHex(temPassword.getBytes());

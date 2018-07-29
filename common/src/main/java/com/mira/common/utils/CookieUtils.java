@@ -1,4 +1,4 @@
-package com.mira.service.utils;
+package com.mira.common.utils;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;

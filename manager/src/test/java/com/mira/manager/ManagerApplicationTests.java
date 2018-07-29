@@ -1,4 +1,4 @@
-package com.mira.common;
+package com.mira.manager;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.mira.service.utils;
+package com.mira.common.utils;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;

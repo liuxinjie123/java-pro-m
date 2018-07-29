@@ -8,17 +8,16 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "m_admins_role")
+@Table(name = "m_admins_login_log")
 @Data
 @NoArgsConstructor
-public class AdminRoleEntity extends BaseEntity implements Serializable {
+public class AdminLoginLogDO extends BaseEntity implements Serializable {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
     @Column(name = "id")
     private Long id;						                // 自增长主键
-    @Column(name = "number")
-    private int num;                 //编号
-    @Column(name = "role")
-    private String role;             //角色
-
+    @Column(name = "admin_id")
+    private String adminId;          //admin id
+    @Column(name = "username")
+    private String username;         //用户登录名
 }

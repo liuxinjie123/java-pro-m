@@ -1,4 +1,4 @@
-package com.mira.service.utils;
+package com.mira.common.utils;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;

@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Table(name = "m_admins")
 @Data
 @NoArgsConstructor
-public class AdminEntity extends BaseEntity implements Serializable {
+public class AdminDO extends BaseEntity implements Serializable {
 
     @Column(name = "username")
     private String username;				// 登录的账号
@@ -26,7 +26,7 @@ public class AdminEntity extends BaseEntity implements Serializable {
     private String name;                    // 姓名
 
     @Column(name = "status")
-    private String status;
+    private int status;
 
     @Column(name = "number")
     private String number;                  // 工号

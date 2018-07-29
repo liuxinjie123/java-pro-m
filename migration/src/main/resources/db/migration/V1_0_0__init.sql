@@ -4,7 +4,7 @@ CREATE TABLE `m_admins` (
   `password` VARCHAR(100) NOT NULL COMMENT '密码',
   `name` VARCHAR(60) DEFAULT NULL COMMENT '姓名',
   `number` VARCHAR(30) DEFAULT NULL COMMENT '工号',
-  `status` INT(3) NOT NULL COMMENT '状态',
+  `status` INT(3) NOT NULL COMMENT '状态 1-正常，2-已禁用',
   `mobile` VARCHAR(20) DEFAULT NULL COMMENT '手机号',
   `email` VARCHAR(100) DEFAULT NULL COMMENT '邮箱',
   `role_id` INT(3) NOT NULL COMMENT '角色id',

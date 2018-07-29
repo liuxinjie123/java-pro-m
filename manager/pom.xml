@@ -28,13 +28,13 @@
 		<dependency>
 			<groupId>com.mira</groupId>
 			<artifactId>common</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
 			<groupId>com.mira</groupId>
 			<artifactId>service</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>1.0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>

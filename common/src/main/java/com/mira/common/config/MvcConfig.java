@@ -1,4 +1,4 @@
-package com.mira.wechat.config;
+package com.mira.common.config;
 
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -9,7 +9,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import javax.annotation.PostConstruct;
 
-@Configuration
+@Configuration("commonMvcConfig")
 public class MvcConfig implements WebMvcConfigurer {
     @Autowired
     private ObjectMapper objectMapper;
