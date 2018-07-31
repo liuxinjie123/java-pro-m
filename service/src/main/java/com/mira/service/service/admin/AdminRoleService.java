@@ -1,9 +1,13 @@
 package com.mira.service.service.admin;
 
-import com.mira.service.entity.admin.AdminRoleDO;
+import com.mira.common.dto.admin.AdminRoleDTO;
+
+import java.util.List;
 
 public interface AdminRoleService {
-    void save(AdminRoleDO adminRole);
+    void save(AdminRoleDTO adminRole);
 
-    AdminRoleDO findByNum(int num);
+    AdminRoleDTO findByNum(int num);
+
+    List<AdminRoleDTO> list();
 }

@@ -27,7 +27,7 @@ public class GlobalConfigInterceptor extends HandlerInterceptorAdapter {
         long startTime = (Long) request.getAttribute("startTime");
         request.removeAttribute("startTime");
         long endTime = System.currentTimeMillis();
-        System.out.println("本次处理时间为：" + new Long(endTime = startTime) + "ms");
+//        System.out.println("本次处理时间为：" + new Long(endTime = startTime) + "ms");
         request.setAttribute("handingTime", endTime - startTime);
     }
 }

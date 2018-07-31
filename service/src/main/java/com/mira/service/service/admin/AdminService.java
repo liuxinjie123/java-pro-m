@@ -1,9 +1,14 @@
 package com.mira.service.service.admin;
 
-import com.mira.service.entity.admin.AdminDO;
+import com.mira.common.dto.admin.AdminDTO;
+import com.mira.common.vo.Page;
+
+import java.util.List;
 
 public interface AdminService {
-    void save(AdminDO admin);
+    void save(AdminDTO admin);
 
-    AdminDO findByUsername(String username);
+    AdminDTO findByUsername(String username);
+
+    List<AdminDTO> list(Page page);
 }
